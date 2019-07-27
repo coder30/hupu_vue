@@ -1,5 +1,6 @@
 <template>
   <div>
+    <div>DRIBALL</div>
     <van-tabbar v-model="active">
       <van-tabbar-item>
         <img
