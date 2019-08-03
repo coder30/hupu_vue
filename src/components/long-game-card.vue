@@ -65,7 +65,7 @@ export default {
 .game-doing{
     color: #ffffff;
     font-size: 8px;
-    line-height: 9px;
+    line-height: 8px;
     background: #EC174C;
     border-radius: 8px;
     display: flex;
@@ -73,6 +73,5 @@ export default {
     align-items: center;
     height: 14px;
     width: 28px;
-    font-weight: lighter;
 }
 </style>

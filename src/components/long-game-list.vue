@@ -4,7 +4,9 @@
             <div>03/05</div>
             <div>星期二</div>
         </div>
-        <gameCard class="list" div v-for="(item, index) in gameList" :key="index"/>
+        <div>
+            <gameCard class="list" div v-for="(item, index) in gameList" :key="index"/>
+        </div>
     </div>
 </template>
 
@@ -25,12 +27,13 @@ export default {
 <style scoped>
 .game-list-warpper{
     overflow: hidden;
+    display: flex;
 }
 .time{
     color: #EC174C;
     letter-spacing: 0.04em;
     font-size: 14px;
-    float: left;
+    width: 100%;
 }
 .list{
     margin-bottom: 20px;
