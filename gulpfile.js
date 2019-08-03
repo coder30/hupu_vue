@@ -1,5 +1,10 @@
+// 新用该脚本前，务必
+// 1. 配置密钥和域名
+// 2. 配置scope
+
 const qiniu = require('qiniu')
-const hostname = 'http:/hupu.jackjam.xyz';
+// 1. 配置密钥和域名
+const hostname = 'https://hupu.jackjam.xyz/';
 const accessKey = 'vGlCmus7RxBcgECb_4KmI747ctxeOqmOrLJvRJ9Q';
 const secretKey = 'PGmX0c4Ny79L1tuynfmlB9xRhNCtpFqvFjn1AD--';
 
@@ -22,8 +27,10 @@ const freshFile = (urlsToRefresh) => {
 const uploadFile = (localFile, key, overwrite) => {
     return new Promise((resolve, reject) => {
         const mac = new qiniu.auth.digest.Mac(accessKey, secretKey);
+        // 2. 配置scope
+        const scope = 'hupu'
         const options = {
-            scope: overwrite ? `hupu:${key}` : 'hupu',
+            scope: overwrite ? `${scope}:${key}` : scope,
         };
         const config = new qiniu.conf.Config();
         // 空间对应的机房

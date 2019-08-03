@@ -1,22 +1,31 @@
 <template>
-  <div>
-    <div>DRIBALL</div>
-    <van-tabbar v-model="active">
-      <van-tabbar-item>
+  <div class="app-warpper">
+    <router-view/>
+    <van-tabbar route v-model="active">
+      <van-tabbar-item
+        replace
+        to="/"
+      >
         <img
           slot="icon"
           slot-scope="props"
           :src="props.active ? icon.home_active : icon.home_normal"
         >
       </van-tabbar-item>
-      <van-tabbar-item>
+      <van-tabbar-item
+        replace
+        to="/game"
+      >
         <img
           slot="icon"
           slot-scope="props"
           :src="props.active ? icon.ball_acitve : icon.ball_normal"
         >
       </van-tabbar-item>
-      <van-tabbar-item>
+      <van-tabbar-item
+        replace
+        to="/forum"
+      >
         <img
           slot="icon"
           slot-scope="props"
@@ -44,4 +53,10 @@ export default {
 </script>
 
 <style>
+html{
+  background: #fafafa;
+}
+.app-warpper{
+  overflow: scroll;
+}
 </style>
